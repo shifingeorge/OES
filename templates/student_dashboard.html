@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+</head>
+<body>
+    <h1>Student Dashboard</h1>
+    <p>Welcome, {{ student.name }} ({{ student.email }})</p>
+    {% if class_.modules %}
+        {% for module in class_.modules %}
+            <h2>{{ module.name }}</h2>
+            <p>{{ module.notes }}</p>
+            {% if module.pdf_file %}
+                <a href="{{ url_for('download_pdf', filename=module.pdf_file) }}">Download PDF</a>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p>No modules found.</p>
+    {% endif %}
+</body>
+</html>

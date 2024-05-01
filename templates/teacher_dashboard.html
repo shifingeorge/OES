@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Dashboard</title>
+</head>
+<body>
+    <h1>Teacher Dashboard</h1>
+    {% if classes %}
+        {% for class_ in classes %}
+            <h2>{{ class_.name }} - {{ class_.subject }}</h2>
+            {% if class_.modules %}
+                {% for module in class_.modules %}
+                    <h3>{{ module.name }}</h3>
+                    <p>{{ module.notes }}</p>
+                    {% if module.pdf_file %}
+                        <a href="{{ url_for('download_pdf', filename=module.pdf_file) }}">Download PDF</a>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <p>No modules found.</p>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p>No classes found.</p>
+    {% endif %}
+    <p><a href="{{ url_for('create_class', user_id=user.id) }}">Create Class</a></p>
+    <p><a href="{{ url_for('upload_notes', class_id=class_.id) }}">Upload Notes</a></p>
+</body>
+</html>

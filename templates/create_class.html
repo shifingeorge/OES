@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Class</title>
+</head>
+<body>
+    <h1>Create Class</h1>
+    <form method="post" action="{{ url_for('create_class', user_id=user_id) }}" enctype="multipart/form-data">
+        <label for="name">Class Name:</label>
+        <input type="text" name="name" required>
+        <br>
+        <label for="subject">Subject:</label>
+        <input type="text" name="subject" required>
+        <br>
+        <label for="csv_file">CSV File:</label>
+        <input type="file" name="csv_file" accept=".csv" required>
+        <br>
+        <button type="submit">Create Class</button>
+    </form>
+</body>
+</html>

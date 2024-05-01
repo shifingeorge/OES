@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Login</title>
+</head>
+<body>
+    <h1>Teacher Login</h1>
+    <form method="post" action="{{ url_for('teacher_login') }}">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>

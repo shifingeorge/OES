@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Notes</title>
+</head>
+<body>
+    <h1>Upload Notes</h1>
+    <form method="post" action="{{ url_for('upload_notes', class_id=class_.id) }}" enctype="multipart/form-data">
+        <label for="name">Module Name:</label>
+        <input type="text" name="name" required>
+        <br>
+        <label for="module1_notes">Module 1 Notes:</label>
+        <textarea name="module1_notes" required></textarea>
+        <br>
+        <label for="module1_pdf">Module 1 PDF:</label>
+        <input type="file" name="module1_pdf" accept=".pdf">
+        <br>
+        <label for="module2_notes">Module 2 Notes:</label>
+        <textarea name="module2_notes" required></textarea>
+        <br>
+        <label for="module2_pdf">Module 2 PDF:</label>
+        <input type="file" name="module2_pdf" accept=".pdf">
+        <br>
+        <label for="module3_notes">Module 3 Notes:</label>
+        <textarea name="module3_notes" required></textarea>
+        <br>
+        <label for="module3_pdf">Module 3 PDF:</label>
+        <input type="file" name="module3_pdf" accept=".pdf">
+        <br>
+        <button type="submit">Upload Notes</button>
+    </form>
+</body>
+</html>
